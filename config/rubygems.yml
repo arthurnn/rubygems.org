@@ -1,7 +1,7 @@
 development:
   host: localhost
   local_storage: true
-  s3_bucket: ""
+  s3_bucket: s3bucket
   s3_domain: development.s3.rubygems.org
   cf_domain: development.cf.rubygems.org
 

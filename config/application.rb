@@ -23,11 +23,12 @@ module Gemcutter
 
     config.after_initialize do
       Hostess.local = config.rubygems['local_storage']
+      RubygemFs.s3! ENV['S3_PROXY'] if ENV['S3_PROXY']
     end
 
     config.plugins = [:dynamic_form]
 
-    config.autoload_paths << "./app/jobs"
+    config.autoload_paths << Rails.root.join('lib')
   end
 
   def self.config
